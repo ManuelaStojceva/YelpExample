@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">YelpApp</string>
+    <string name="title_home">Business</string>
+    <string name="title_search">Search</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="title_home_info">Business Info</string>
+    <string name="title_search_info">Search Category</string>
+    <string name="title_detail_info">Additional Info</string>
+
+    <string name="NetworkError">Could not connect to server, please check your network connection</string>
+    <string name="GenericError">We are sorry something went wrong, please try later.</string>
+    <string name="location_permissions_denied">Please go to the phone settings and allow the permissions for location
+        services in
+        order to continue
+    </string>
+    <string name="location_permissions_message">Location permissions are required for search business infos and detailed info.</string>
+    <string name="text_ok">OK</string>
+    <string name="dont_allow_text">DON\'T ALLOW</string>
+    <string name="location_message">Just one more step!\nGo to settings to enable locations.</string>
+    <string name="search_bar_hint">for ex. \"bikeparking\", not \"Bike Parking\"</string>
+    <string name="noResultFoundMsg">Could not find any result for that category. Please try again.</string>
+    <string name="ContactInfoAdd">%1$s, %2$s, %3$s, %4$s</string>
+</resources>

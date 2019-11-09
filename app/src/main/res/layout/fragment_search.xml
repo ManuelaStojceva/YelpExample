@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.yelp.yelpapp.ui.search.SearchBusinessViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dimen_50">
+
+        <EditText
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_style"
+            android:drawableStart="@android:drawable/ic_search_category_default"
+            android:drawablePadding="@dimen/global_margin_2"
+            android:hint="@string/search_bar_hint"
+            android:text="@={viewmodel.searchEditText}"
+            android:imeOptions="actionSearch"
+            android:inputType="text|textNoSuggestions"
+            android:maxLength="200"
+            android:padding="@dimen/global_margin_"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="Autofill" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/global_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search"
+            app:layout_constraintVertical_bias="0.052"
+            tools:listitem="@layout/search_result_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

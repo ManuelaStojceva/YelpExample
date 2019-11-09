@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.yelp.yelpapp.ui.home.HomeFragment"
+        android:label="@string/title_home_info"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_detail"
+            app:destination="@id/navigation_detail"
+            app:enterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_left_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.yelp.yelpapp.ui.search.SearchBusinessFragment"
+        android:label="@string/title_search_info"
+        tools:layout="@layout/fragment_details" >
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.yelp.yelpapp.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.yelp.yelpapp.ui.details.BusinessDetailFragment"
+        android:label="@string/title_detail_info"
+        tools:layout="@layout/fragment_details" />
+
+</navigation>

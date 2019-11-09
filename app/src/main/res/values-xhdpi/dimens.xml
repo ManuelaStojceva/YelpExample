@@ -1,0 +1,63 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="topbar_height">50dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="space_small">5dp</dimen>
+    <dimen name="space_normal">10dp</dimen>
+    <dimen name="space_large">15dp</dimen>
+    <dimen name="space_xlarge">20dp</dimen>
+    <dimen name="space_xhlarge">30dp</dimen>
+    <dimen name="button_margin_side">10dp</dimen>
+    <dimen name="button_padding">10dp</dimen>
+    <dimen name="title_padding">20dp</dimen>
+    <dimen name="global_margin_2">3dp</dimen>
+
+    <dimen name="dimen_3">4dp</dimen>
+
+    <dimen name="fontsize16">8sp</dimen>
+    <!-- 21.3px -->
+    <dimen name="fontsize18">9sp</dimen>
+    <!-- 24px -->
+    <dimen name="fontsize20">10sp</dimen>
+    <!-- 26.67px -->
+    <dimen name="fontsize22">11sp</dimen>
+    <!-- 29.3px -->
+    <dimen name="fontsize24">12sp</dimen>
+    <!-- 32px -->
+    <dimen name="fontsize26">13sp</dimen>
+    <!-- 34.67px -->
+    <dimen name="fontsize28">14sp</dimen>
+    <!-- 37.3px -->
+    <dimen name="fontsize30">15sp</dimen>
+    <!-- 40px -->
+    <dimen name="fontsize32">16sp</dimen>
+    <!-- 42.67px -->
+    <dimen name="fontsize34">17sp</dimen>
+    <!-- 45.3px -->
+    <dimen name="fontsize36">18sp</dimen>
+    <!-- 48px -->
+    <dimen name="fontsize38">19sp</dimen>
+    <!-- 50.67px -->
+    <dimen name="fontsize40">20sp</dimen>
+    <!-- 53.3px -->
+    <dimen name="fontsize42">21sp</dimen>
+    <!-- 56px -->
+    <dimen name="fontsize44">22sp</dimen>
+    <!-- 58.67px -->
+    <dimen name="fontsize46">23sp</dimen>
+    <!-- 61.3px -->
+    <dimen name="fontsize48">24sp</dimen>
+    <!-- 64px -->
+    <dimen name="fontsize50">25sp</dimen>
+    <!-- 66.67px -->
+    <dimen name="fontsize56">28sp</dimen>
+    <!-- 74.67px -->
+    <dimen name="fontsize60">30sp</dimen>
+    <!-- 80px -->
+    <dimen name="fontsize70">35sp</dimen>
+    <!-- 93.3px -->
+    <dimen name="fontsize100">50sp</dimen>
+    <dimen name="img_size">591dp</dimen>
+    <!-- px -->
+</resources>
