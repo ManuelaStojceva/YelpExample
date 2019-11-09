@@ -21,7 +21,7 @@ class BusinessDetailViewModel(
     var open = "Open"
     var close = "Close"
     var specialOffer : MutableLiveData<String> = MutableLiveData()
-    var sOh : LiveData<String> = specialOffer
+    var categories : LiveData<String> = specialOffer
 
     init {
         specialOffer.value = ""
@@ -37,7 +37,7 @@ class BusinessDetailViewModel(
                     return@launch
                 }
                 detailResult.value = response
-                specialOffer.value = Engine.buildSpecialHours(response.special_hours)
+                specialOffer.value = repository.buildCategories(response.categories)
             }catch (e : NoInternetException){
                 searchListener?.onFailure(e.message!!)
             }

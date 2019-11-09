@@ -5,8 +5,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import com.yelp.yelpapp.R
+import com.yelp.yelpapp.model.response.Category
 import com.yelp.yelpapp.model.response.SpecialHour
 import com.yelp.yelpapp.utility.Engine
 
@@ -36,10 +38,9 @@ object PiccassoBindingAdapter {
         else
             textView.setTextColor(ContextCompat.getColor(textView.context, R.color.colorPrimary))
     }
-    @BindingAdapter("specialoffers")
+    @BindingAdapter("specialHours")
     @JvmStatic
-    fun bindSpecialOffers(textView: TextView, specialHours : List<SpecialHour>?){
-       textView.text = Engine.buildSpecialHours(specialHours)
+    fun bindSpecialHour(recyclerView: RecyclerView, sp : List<SpecialHour>?){
+        recyclerView.adapter = sp?.let { SpecialHoursAdapter(it) }
     }
-
 }

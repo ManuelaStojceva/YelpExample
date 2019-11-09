@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.yelp.yelpapp.R
+import com.yelp.yelpapp.adapter.SpecialHoursAdapter
 import com.yelp.yelpapp.databinding.FragmentDetailsBinding
-import com.yelp.yelpapp.model.response.BusinessDetailResponse
 import com.yelp.yelpapp.ui.activity.MainActivity
 import com.yelp.yelpapp.ui.base.BaseFragment
 import com.yelp.yelpapp.utility.AppConstants
@@ -49,21 +50,19 @@ class BusinessDetailFragment : BaseFragment(), KodeinAware {
         val binding : FragmentDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
+        if(activity is AppCompatActivity){
+            (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsedAppBar)
         viewModel.detailBusinessResult.observe(this, Observer {
-            setUi(it)
+            activity?.let { (activity as MainActivity).dismissProgress() }
+            it?.special_hours?.let {sh->
+                //specialHoursRecyclerView.adapter = SpecialHoursAdapter(sh)
+            }
         })
     }
-
-    private fun setUi(it: BusinessDetailResponse?) {
-        activity?.let { (activity as MainActivity).dismissProgress() }
-        it?.let {
-            //detailsGroup.visibility = View.VISIBLE
-        }
-    }
-
 }

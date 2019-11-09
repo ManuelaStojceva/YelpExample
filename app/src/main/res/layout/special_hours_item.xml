@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="category"
+            type="com.yelp.yelpapp.model.response.SpecialHour" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_3"
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/global_margin">
+
+        <TextView
+            android:id="@+id/dateText"
+            style="@style/TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/global_paddingLeftRight"
+            android:paddingEnd="@dimen/global_paddingLeftRight"
+            android:textColor="@android:color/white"
+            android:text="@{category.date}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/startText"
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="@dimen/global_margin_"
+            android:text="@string/text_start"
+            app:layout_constraintEnd_toStartOf="@id/startTimeText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dateText" />
+
+        <TextView
+            android:id="@+id/startTimeText"
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="@{category.start}"
+            app:layout_constraintBottom_toBottomOf="@id/startText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/startText"
+            app:layout_constraintTop_toTopOf="@id/startText" />
+
+        <TextView
+            android:id="@+id/endText"
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/global_margin_"
+            android:text="@string/text_end"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/startText"
+            app:layout_constraintTop_toBottomOf="@id/startText" />
+
+        <TextView
+            android:id="@+id/endTimeText"
+            style="@style/TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{category.end}"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="@id/endText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/endText"
+            app:layout_constraintTop_toTopOf="@id/endText" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

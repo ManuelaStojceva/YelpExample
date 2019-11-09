@@ -51,14 +51,14 @@ class MainActivity : AppCompatActivity(), KodeinAware, LocationServicesListener 
 
         val navController = findNavController(R.id.nav_host_fragment)
         //set up navigation bar
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home,
-                R.id.navigation_search,
-                R.id.navigation_about
-            )
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        val appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.navigation_home,
+//                R.id.navigation_search,
+//                R.id.navigation_about
+//            )
+//        )
+//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         mProgressDialog = this.pageLoadingIndicator
         checkAndRequestPermissions()

@@ -26,4 +26,6 @@
     <string name="text_review_count">reviews: </string>
     <string name="text_visit_page">Map View</string>
     <string name="appInfo">The Yelp Fusion API allows you to get the best local content and user reviews from millions of businesses across 32 countries.\nThis application provides an overview of the capabilities our suite of APIs offer, provides instructions for how to authenticate API calls, and walks through a simple scenario using the API.</string>
+    <string name="text_start">Start: </string>
+    <string name="text_end">End: </string>
 </resources>
