@@ -1,5 +1,8 @@
 package com.yelp.yelpapp.model.response
 
+import java.text.NumberFormat
+import java.util.*
+
 data class BusnessSearchResponse(
     val businesses: List<Businesse>?,
     val region: Region?,
@@ -23,7 +26,12 @@ data class Businesse(
     val transactions: List<String>?,
     val url: String?
 )
-
+fun distanceFormat(distance: Double): String {
+    val formatter = NumberFormat.getNumberInstance(Locale.getDefault())
+    var str = formatter.format(distance)
+    str = StringBuilder(str).insert(str.length, " mi").toString()
+    return str
+}
 data class Category(
     val alias: String?,
     val title: String?

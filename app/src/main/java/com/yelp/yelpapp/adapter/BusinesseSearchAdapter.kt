@@ -1,20 +1,21 @@
 package com.yelp.yelpapp.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
+import com.yelp.yelpapp.BR
 import com.yelp.yelpapp.R
 import com.yelp.yelpapp.interfaces.SearchActionListener
 import com.yelp.yelpapp.model.response.Businesse
-import com.yelp.yelpapp.utility.Engine
 import kotlinx.android.synthetic.main.search_result_item.view.*
 
 class BusinesseSearchAdapter(private val items : List<Businesse>, private val listener : SearchActionListener) : RecyclerView.Adapter<BusinesseSearchAdapter.BusinesseHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BusinesseHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.search_result_item, parent, false)
-        return BusinesseHolder(view)
+        val inflater = LayoutInflater.from(parent.context)
+        val binding : ViewDataBinding = DataBindingUtil.inflate(inflater, R.layout.search_result_item, parent, false)
+        return BusinesseHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -27,24 +28,18 @@ class BusinesseSearchAdapter(private val items : List<Businesse>, private val li
 
     override fun onBindViewHolder(holder: BusinesseHolder, position: Int) {
         val item = items[position]
-        holder.initView(item)
-        holder.itemHolder.setOnClickListener { item.id?.let { it1 -> listener.onItemClicked(it1) } }
+        holder.bind(item)
+        holder.binding.root.clickItem.setOnClickListener { item.id?.let { it1 ->
+            listener.onItemClicked(
+                it1
+            )
+        } }
     }
 
-    class BusinesseHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val itemHolder = itemView.item
-        private val image = itemView.img
-        private val name = itemView.name
-        private val infos = itemView.info
-        private val rating = itemView.ratingBar
-        private val distance = itemView.distance
-        fun initView(item : Businesse){
-            if(!item.image_url.isNullOrEmpty())
-                Picasso.get().load(item.image_url).into(image)
-            item.name?.let { name.text = item.name }
-            item.location?.let { infos.text = itemView.context.getString(R.string.ContactInfoAdd, item.location.address1, item.location.city, item.location.country, item.location.zip_code ) }
-            item.distance?.let { distance.text = Engine.distanceFormat(item.distance) }
-            item.rating?.let { rating.rating = item.rating }
+    inner class BusinesseHolder(val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item : Businesse){
+            binding.setVariable(BR.item, item)
+            binding.executePendingBindings()
         }
     }
 }
