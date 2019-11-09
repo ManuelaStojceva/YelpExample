@@ -29,6 +29,6 @@ open class BaseFragment : Fragment(), SearchActionListener {
 
     override fun onItemClicked(id: String) {
         val bundle = bundleOf(AppConstants.extraBusinessId to id)
-        findNavController().navigate(R.id.action_navigation_home_to_navigation_detail, bundle, Engine.popUpLeftRightNavigation())
+        findNavController().navigate(R.id.action_navigation_to_navigation_detail, bundle, Engine.popUpLeftRightNavigation())
     }
 }

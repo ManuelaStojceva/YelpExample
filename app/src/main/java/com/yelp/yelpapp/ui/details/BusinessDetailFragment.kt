@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.yelp.yelpapp.R
+import com.yelp.yelpapp.databinding.FragmentDetailsBinding
 import com.yelp.yelpapp.model.response.BusinessDetailResponse
+import com.yelp.yelpapp.ui.activity.MainActivity
 import com.yelp.yelpapp.ui.base.BaseFragment
 import com.yelp.yelpapp.utility.AppConstants
 import kotlinx.android.synthetic.main.fragment_details.*
@@ -43,7 +46,10 @@ class BusinessDetailFragment : BaseFragment(), KodeinAware {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_details, container, false)
+        val binding : FragmentDetailsBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_details, container, false)
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,11 +60,9 @@ class BusinessDetailFragment : BaseFragment(), KodeinAware {
     }
 
     private fun setUi(it: BusinessDetailResponse?) {
+        activity?.let { (activity as MainActivity).dismissProgress() }
         it?.let {
-            if(it.is_closed!!)
-                isOpen.text = "CLOSE"
-            else
-                isOpen.text = "OPEN"
+            //detailsGroup.visibility = View.VISIBLE
         }
     }
 

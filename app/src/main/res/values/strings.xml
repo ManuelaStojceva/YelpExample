@@ -2,7 +2,7 @@
     <string name="app_name">YelpApp</string>
     <string name="title_home">Business</string>
     <string name="title_search">Search</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_about">Info</string>
 
     <string name="title_home_info">Business Info</string>
     <string name="title_search_info">Search Category</string>
@@ -21,4 +21,9 @@
     <string name="search_bar_hint">for ex. \"bikeparking\", not \"Bike Parking\"</string>
     <string name="noResultFoundMsg">Could not find any result for that category. Please try again.</string>
     <string name="ContactInfoAdd">%1$s, %2$s, %3$s, %4$s</string>
+    <string name="displayAddress">%1$s, %2$s</string>
+    <string name="text_contact">Contact</string>
+    <string name="text_review_count">reviews: </string>
+    <string name="text_visit_page">Map View</string>
+    <string name="appInfo">The Yelp Fusion API allows you to get the best local content and user reviews from millions of businesses across 32 countries.\nThis application provides an overview of the capabilities our suite of APIs offer, provides instructions for how to authenticate API calls, and walks through a simple scenario using the API.</string>
 </resources>

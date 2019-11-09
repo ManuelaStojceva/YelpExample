@@ -35,6 +35,7 @@ class SearchBusinessFragment : BaseFragment(), KodeinAware {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel.searchListener = this
         val binding : FragmentSearchBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_search, container, false)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this

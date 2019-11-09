@@ -11,7 +11,7 @@
         android:label="@string/title_home_info"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_navigation_detail"
+            android:id="@+id/action_navigation_to_navigation_detail"
             app:destination="@id/navigation_detail"
             app:enterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_left_out"/>
@@ -23,15 +23,15 @@
         android:label="@string/title_search_info"
         tools:layout="@layout/fragment_details" >
         <action
-            android:id="@+id/action_navigation_search_to_navigation_detail"
+            android:id="@+id/action_navigation_to_navigation_detail"
             app:destination="@id/navigation_detail" />
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.yelp.yelpapp.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_about"
+        android:name="com.yelp.yelpapp.ui.notifications.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
 
 
     <fragment
