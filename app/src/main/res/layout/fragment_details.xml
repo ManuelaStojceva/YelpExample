@@ -25,6 +25,8 @@
                 android:fitsSystemWindows="true"
                 app:expandedTitleMarginEnd="56dp"
                 app:expandedTitleMarginStart="@dimen/global_paddingLeftRight"
+                app:statusBarScrim="@android:color/transparent"
+                app:expandedTitleTextAppearance="@android:color/transparent"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:title="@{viewmodel.detailBusinessResult.name}">
 

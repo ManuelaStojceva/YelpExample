@@ -3,6 +3,7 @@
     <string name="title_home">Business</string>
     <string name="title_search">Search</string>
     <string name="title_about">Info</string>
+    <string name="about_app">About</string>
 
     <string name="title_home_info">Business Info</string>
     <string name="title_search_info">Search Category</string>
@@ -28,4 +29,6 @@
     <string name="appInfo">The Yelp Fusion API allows you to get the best local content and user reviews from millions of businesses across 32 countries.\nThis application provides an overview of the capabilities our suite of APIs offer, provides instructions for how to authenticate API calls, and walks through a simple scenario using the API.</string>
     <string name="text_start">Start: </string>
     <string name="text_end">End: </string>
+
+    <string name="sample_string"><![CDATA[<h2>Yelp connects people with great local businesses</h2><br><p>Yelp is a business directory service and crowd-sourced review forum, and a public company of the same name that is headquartered in San Francisco, California.</p><p>The Yelp Fusion API allows you to get the best local content and user reviews from millions of businesses across 32 countries.</p>]]></string>
 </resources>

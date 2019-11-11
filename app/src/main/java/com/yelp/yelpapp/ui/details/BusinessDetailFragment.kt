@@ -52,17 +52,15 @@ class BusinessDetailFragment : BaseFragment(), KodeinAware {
         binding.lifecycleOwner = this
         if(activity is AppCompatActivity){
             (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+            (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        collapsingToolbar.setExpandedTitleTextAppearance(R.style.CollapsedAppBar)
+
         viewModel.detailBusinessResult.observe(this, Observer {
             activity?.let { (activity as MainActivity).dismissProgress() }
-            it?.special_hours?.let {sh->
-                //specialHoursRecyclerView.adapter = SpecialHoursAdapter(sh)
-            }
         })
     }
 }

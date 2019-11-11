@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.yelp.yelpapp.api.SafeApiRequest
 
-open class BaseRepository() : SafeApiRequest() {
+open class BaseRepository : SafeApiRequest() {
 
     private var errorMessage : MutableLiveData<String> = MutableLiveData()
 
