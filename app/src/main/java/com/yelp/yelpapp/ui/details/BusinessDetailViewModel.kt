@@ -7,8 +7,8 @@ import com.yelp.yelpapp.api.NoInternetException
 import com.yelp.yelpapp.interfaces.SearchActionListener
 import com.yelp.yelpapp.model.response.BusinessDetailResponse
 import com.yelp.yelpapp.ui.base.BaseViewModel
-import com.yelp.yelpapp.utility.Engine
 import kotlinx.coroutines.launch
+import java.lang.reflect.UndeclaredThrowableException
 
 class BusinessDetailViewModel(
     private val repository: BusinessDetailRepository
@@ -20,8 +20,8 @@ class BusinessDetailViewModel(
     var searchListener : SearchActionListener? = null
     var open = "Open"
     var close = "Close"
-    var specialOffer : MutableLiveData<String> = MutableLiveData()
-    var categories : LiveData<String> = specialOffer
+    private var specialOffer : MutableLiveData<String> = MutableLiveData()
+    var specialOffers : LiveData<String> = specialOffer
 
     init {
         specialOffer.value = ""
@@ -40,6 +40,8 @@ class BusinessDetailViewModel(
                 specialOffer.value = repository.buildCategories(response.categories)
             }catch (e : NoInternetException){
                 searchListener?.onFailure(e.message!!)
+            }catch (e : UndeclaredThrowableException){
+                e.cause?.message?.let { searchListener?.onFailure(it) }
             }
         }
     }

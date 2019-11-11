@@ -4,11 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yelp.yelpapp.R
 import com.yelp.yelpapp.adapter.BusinesseSearchAdapter
@@ -17,8 +15,6 @@ import com.yelp.yelpapp.displayErrorMessage
 import com.yelp.yelpapp.model.response.Businesse
 import com.yelp.yelpapp.ui.activity.MainActivity
 import com.yelp.yelpapp.ui.base.BaseFragment
-import com.yelp.yelpapp.utility.AppConstants
-import com.yelp.yelpapp.utility.Engine
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware

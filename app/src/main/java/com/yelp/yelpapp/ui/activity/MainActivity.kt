@@ -12,8 +12,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yelp.yelpapp.R
@@ -29,11 +27,7 @@ import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.indices
-import kotlin.collections.isNotEmpty
 import kotlin.collections.set
-import kotlin.collections.setOf
-import kotlin.collections.toTypedArray
 
 class MainActivity : AppCompatActivity(), KodeinAware, LocationServicesListener {
 
@@ -50,15 +44,7 @@ class MainActivity : AppCompatActivity(), KodeinAware, LocationServicesListener 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val navController = findNavController(R.id.nav_host_fragment)
-        //set up navigation bar
-//        val appBarConfiguration = AppBarConfiguration(
-//            setOf(
-//                R.id.navigation_home,
-//                R.id.navigation_search,
-//                R.id.navigation_about
-//            )
-//        )
-//        setupActionBarWithNavController(navController, appBarConfiguration)
+
         navView.setupWithNavController(navController)
         mProgressDialog = this.pageLoadingIndicator
         checkAndRequestPermissions()

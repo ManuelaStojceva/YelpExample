@@ -9,12 +9,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.yelp.yelpapp.R
-import com.yelp.yelpapp.adapter.SpecialHoursAdapter
 import com.yelp.yelpapp.databinding.FragmentDetailsBinding
 import com.yelp.yelpapp.ui.activity.MainActivity
 import com.yelp.yelpapp.ui.base.BaseFragment
 import com.yelp.yelpapp.utility.AppConstants
-import kotlinx.android.synthetic.main.fragment_details.*
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein

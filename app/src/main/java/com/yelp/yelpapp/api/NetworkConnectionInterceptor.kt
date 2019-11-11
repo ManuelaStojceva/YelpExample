@@ -3,7 +3,6 @@ package com.yelp.yelpapp.api
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import android.os.Build
 import com.yelp.yelpapp.R
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -20,7 +19,7 @@ class NetworkConnectionInterceptor(context: Context) : Interceptor {
         var result = false
        val connectivityManager =
            appContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager?
-        connectivityManager?.let { if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+        connectivityManager?.let {
             it.getNetworkCapabilities(connectivityManager.activeNetwork)?.apply {
                 result = when {
 
@@ -29,12 +28,7 @@ class NetworkConnectionInterceptor(context: Context) : Interceptor {
                     else -> false
                 }
             }
-            }else {
-            connectivityManager.activeNetworkInfo.also {info ->
-                result = info != null && info.isConnected
-                return result
-            }
-        }
+
         }
         return result
         }

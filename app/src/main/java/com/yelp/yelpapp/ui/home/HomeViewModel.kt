@@ -1,15 +1,14 @@
 package com.yelp.yelpapp.ui.home
 
-import androidx.databinding.Bindable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.yelp.yelpapp.api.NoInternetException
 import com.yelp.yelpapp.interfaces.SearchActionListener
 import com.yelp.yelpapp.model.response.Businesse
 import com.yelp.yelpapp.ui.base.BaseViewModel
 import kotlinx.coroutines.launch
+import java.lang.reflect.UndeclaredThrowableException
 
 class HomeViewModel(
     private val repository: HomeSearchRepository
@@ -37,6 +36,8 @@ class HomeViewModel(
 
             }catch (e : NoInternetException){
                 searchListener?.onFailure(e.message!!)
+            }catch (e : UndeclaredThrowableException){
+                e.cause?.message?.let { searchListener?.onFailure(it) }
             }
         }
     }

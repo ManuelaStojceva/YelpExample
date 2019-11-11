@@ -6,12 +6,8 @@ import com.yelp.yelpapp.model.response.BusinessDetailResponse
 import com.yelp.yelpapp.model.response.Category
 import com.yelp.yelpapp.ui.base.BaseRepository
 import com.yelp.yelpapp.utility.AppConstants
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.text.TextUtils
 
 
 class BusinessDetailRepository(

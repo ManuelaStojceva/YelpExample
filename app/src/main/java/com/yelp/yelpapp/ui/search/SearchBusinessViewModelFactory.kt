@@ -1,7 +1,6 @@
 package com.yelp.yelpapp.ui.search
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.yelp.yelpapp.ui.base.BaseViewModelFactory
 
 @Suppress("UNCHECKED_CAST")

@@ -11,12 +11,13 @@ import java.lang.StringBuilder
 abstract class SafeApiRequest {
 
     suspend fun<T : Any> apiRequest(call : suspend () -> Response<T>) :T?{
+        val message = StringBuilder()
         val response = call.invoke()
         if(response.isSuccessful) {
             return response.body()!!
         }else{
             val error = response.errorBody()?.string()
-            val message = StringBuilder()
+
             error?.let {
                 if(response.code() != 200){
 
@@ -37,8 +38,9 @@ abstract class SafeApiRequest {
 
             if(message.isEmpty())
                 message.append("We are sorry something went wrong, please try later.")
+
         }
-        return null
+        throw NoInternetException(message.toString())
     }
     abstract fun exception(errorMsg: String, isUnauthorized : Boolean)
 }

@@ -189,7 +189,7 @@
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/global_margin_"
                             android:textAllCaps="false"
-                            android:text="@{viewmodel.categories}"
+                            android:text="@{viewmodel.specialOffers}"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

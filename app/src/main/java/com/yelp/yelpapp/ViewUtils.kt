@@ -8,7 +8,7 @@ import com.yelp.yelpapp.interfaces.LocationServicesListener
 
 fun Context.displayMessage()  {
     try {
-        val alertDialog = androidx.appcompat.app.AlertDialog.Builder(this)
+        val alertDialog = AlertDialog.Builder(this)
         alertDialog.setMessage(R.string.location_permissions_message)
             .setPositiveButton(getString(R.string.text_ok)) { dialog, _ ->
                 dialog.dismiss()
